@@ -1,0 +1,36 @@
+﻿<Window x:Class="AutoCompleteDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AutoComplete Demo" Height="500" Width="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- ComboBox 1 -->
+            <Label Target="{Binding ElementName=AutoCompleteBox1}">_First Name:</Label>
+            <ComboBox Name="AutoCompleteBox1" IsEditable="True" />
+
+            <!-- ComboBox 2 -->
+            <Label Target="{Binding ElementName=AutoCompleteBox2}">_Last Name:</Label>
+            <ComboBox Name="AutoCompleteBox2" IsEditable="True" Margin="0,10,0,0"/>
+
+            <!-- ComboBox 3 -->
+            <Label Target="{Binding ElementName=AutoCompleteBox3}">_City:</Label>
+            <ComboBox Name="AutoCompleteBox3" IsEditable="True" Margin="0,10,0,0"/>
+
+            <!-- ComboBox 4 -->
+            <Label Target="{Binding ElementName=AutoCompleteBox4}">_Country:</Label>
+            <ComboBox Name="AutoCompleteBox4" IsEditable="True" Margin="0,10,0,0"/>
+
+            <!-- Transaction Type ComboBox -->
+            <TextBlock Text="Select transaction type"/>
+            <ComboBox Name="TransactionTypeComboBox" 
+                      SelectionChanged="TransactionTypeComboBox_SelectionChanged" 
+                      IsEditable="True" 
+                      SelectedItem="{Binding SelectedTransactionType, Mode=TwoWay}">
+                <ComboBoxItem Content="OUTREACH"/>
+                <ComboBoxItem Content="OUTGROWER"/>
+                <ComboBoxItem Content="ESTATE"/>
+                <ComboBoxItem Content="OTHER"/>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Window>
